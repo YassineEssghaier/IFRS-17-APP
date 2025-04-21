@@ -1,0 +1,38 @@
+This serves as the documentation-Readme file supporting the Reporting Engine model code.
+
+Below are step by step descriptions of how the reporting model works.
+1. Importing the required libraries.
+(pandas, numpy, datetime, dateutil.rrule, pymysql, sqlalchemy)
+
+2. Next, a class "Reporting_Engine" class is initiated with parameters taking the input csv file (IFRS 17 Calculations) and the configurations parameters choosen by the user (converted into csv).
+3. Next, we define a function 'iferror("entry")' with purpsoe to check if the particular "entry" is avialable in the input data provided and return that if so, else return a zero if not available.
+4. Next, we create 12 empty objects to map and store reporting values from the input data and based on reportng configurayions set. These tables include:
+- Reconciliation of Best Estimate liabilities (Gross)
+- Reconciliation of Risk Adjustment (Gross)
+- Reconciliation of Contractual Serivce Margin (Gross)
+- Reconciliation of Insurance Contract Liability (Gross)
+- Analysis of Measurement Components (Gross)
+- Analysis of Remaining Coverages (Gross)
+- Reconciliation of Best Estimate liabilities (Reinsurance)
+- Reconciliation of Risk Adjustment (Reinsurance)
+- Reconciliation of Contractual Serivce Margin (Reinsurance)
+- Reconciliation of Insurance Contract Liability (Reinsurance)
+- Analysis of Measurement Components (Reinsurance)
+- Analysis of Remaining Coverages (Reinsurance)
+
+5. Next, Based on the reporting configurations choosen for type of reporting frequency (Annual, Quaterly, Monthly) and the the start and the end dates of reporting selected, the date range is created which will act as an indexing factor when mapping values per each date.
+For eg, if the type of reporting frequency is set as "Monthly" and start and end dates selected are "1/1/2019", "31/1/2019" respectively, then the date range would be constructed with values including 31/01/2019,28/02/2019,31/03/2019,.......,31/12/2019.
+
+6. Next, the date range converted into a series and stored as dictionaries which is then mapped as index keys. (In the whole process of mapping. we map based on the keys and then at the end of the model we reverse the keys into data ranges)
+7. Next, using pd.pivot_table() function we summarize(sum) the input data grouping them by "index keys", "product", "sub-product" and "Label Keys".
+8. Further, again group the data by "product" and "sub-product" such that based on the number of products and sub-products we get the number of groups. Example, if we have 2 products each with 2 sub-products, we get in total 4 groups.
+9. Next, we use for loop to select each group. 
+10. Next, we add values to the empty objects we created at the start of the model with index values, product name, sub-product name and the measure names (account names) and convert the objects into dataframe tables.. (Note: All the tables have same measure names excluding the analysis of measurement component and anlysis of remaining coverage.) 
+11. Next, using the for loop again to loop through index values (date ranges keys), we index nd map values to each row of the tables. (we have used here the iferror() and the loc. function to based on ,ultiple condition select and map values from input data into each dataframe table).
+12. The step 11 is repeated for all tables.
+13. We then append and concatenate each of the rows per each index values (date range keys) into one single dataframe and again convert inot dataframe format.
+14. Next, we re convert(re-map) the index keys back into teh date ranges which we did in step 6.
+15. Further, based on the type of reporting model selected by the user, the unnecessary rows are dropped.
+16. Finally, the newly created 12 tables are sent to the SQL server, where they are stored and accessed by the dashboard. 
+
+

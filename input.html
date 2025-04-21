@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>Document</title>
+    <style>
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #010000;
+            padding: 10px;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 0 10px;
+        }
+
+        .menu a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        table {
+            margin-top: 10%;
+            height: 650px;
+            width: 1400px;
+            overflow: auto;
+            display: block;
+            color: #f1f9f9;
+        }
+
+
+        td,
+        th {
+            background-color: #000404;
+            padding: 15px;
+            text-align: left;
+            color: aliceblue;
+            border: 1px solid rgb(90, 104, 12);
+            border-collapse: collapse;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ifrs17 app</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="menu">
+            <div class="logo">
+                <a href="index.html">IFRS 17 APP</a>
+            </div>
+            <ul>
+                <li>
+                    <a href="index.html">HOME</a>
+                </li>
+                <li>
+                    <a href="calc.html">Return to previous page</a>
+                </li>
+                </li>
+                <li>
+                    <a href="#" onclick="fetchdata12(); return false;">Show Reporting Configuration</a>
+                </li>
+                <li>
+                    <a href="#" onclick="fetchdata13(); return false;">Show input data</a>
+                </li>
+                <!-- <li>
+                    <a href="#" onclick="fetchdata9(); return false;">perform Validation!</a>
+                </li> -->
+
+            </ul>
+            <!-- <div class="menu">
+            <div class="logo">
+                <a href="index.html">IFRS 17 APP</a>
+                <h2 style="color:rgb(252, 250, 250)" ;>page to show the raw input></h2>
+                <button type="button" id="btnget" onclick="fetchdata12()">show parameters</button>
+                <button type="button" id="btnget1" onclick="fetchdata13()">show assumptions!</button>
+                <button type="button" id="btnget1" onclick="fetchdata9()">perform Validation!</button> -->
+    </nav>
+    <div class="img"></div>
+    <div class="center">
+        <div class="container">
+            <table class="table table-stripped">
+                <thead>
+                    <tr>
+                    </tr>
+                </thead>
+                <tbody id="data">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+
+        // function fetchecs() {
+        //     fetch('https://1kac2ix5dj.execute-api.ap-south-1.amazonaws.com/dev/')
+        //         .then(res => res.json())
+        //         .then(data => {
+        //             console.log(data);
+        //             if (data) {
+        //                 alert(data);
+        //                 setTimeout(function () {
+        //                     alert("Tables have been generated");
+        //                 }, 30000);
+        //             } else {
+        //                 console.log('Data is undefined');
+        //             }
+        //         })
+        //         .catch(error => alert(error));
+        // }
+
+
+        var bel;
+        var obj;
+        var dataObj;
+        function fetchdata12() {
+            fetch('https://az5am27b2b.execute-api.ap-south-1.amazonaws.com/dev/').then(res => {
+                return res.json();
+            })
+                .then(data => {
+                    console.log(typeof (data));
+                    dataObj = JSON.parse(data);
+                    //console.log(data);
+                    console.log(typeof (dataObj));
+                    //console.log(dataObj);
+                    //obj = JSON.parse(dataObj);
+                    //console.log(obj);
+                    //console.log(typeof (obj));
+                    console.log(dataObj);
+                    if (dataObj.length > 0) {
+                        var temp = "";
+                        temp += "<th colspan='12' style='color:green; text-align:center;'>Configurations Chosen</th>";
+                        temp += "<table>"; // Start the table element
+                        //--start of loop
+                        temp += "<tr>";
+                        // temp += "<th> index </th>"
+                        temp += "<th> Parameter </th>"
+                        temp += "<th> Selection </th>"
+                        temp += "</tr>";
+                        dataObj.forEach((u) => {
+                            temp += "<tr>";
+                            temp += "<td>" + u.Parameter + "</td>";
+                            temp += "<td>" + u.Selection + "</td>";
+                            // temp += "<td>" + u[2] + "</td>";
+                            temp += "</tr>";
+                        })
+                        //--close for loop
+                        temp += "</table>"; // Close the table element
+                        document.getElementById("data").innerHTML = temp;
+
+                    }
+                })
+                .catch(error => console.log(error));
+        }
+
+        function fetchdata13() {
+            fetch('https://phibxy5x6h.execute-api.ap-south-1.amazonaws.com/dev/').then(res => {
+                return res.json();
+            })
+                .then(data => {
+                    console.log(typeof (data));
+                    dataObj = JSON.parse(data);
+                    //console.log(data);
+                    console.log(typeof (dataObj));
+                    //console.log(dataObj);
+                    //obj = JSON.parse(dataObj);
+                    //console.log(obj);
+                    //console.log(typeof (obj));
+                    if (dataObj.length > 0) {
+                        var temp = "";
+                        //--start of loop
+                        temp += "<th colspan='23' style='color:green; text-align:left;'>Latest Input File</th>";
+                        temp += "<table>"; // Start the table element
+                        temp += "<tr>";
+                        // temp += "<th> index </th>"
+                        temp += "<th> Cohort </th>"
+                        temp += "<th> Product </th>"
+                        temp += "<th> Sub-Product </th>"
+                        temp += "<th> Key Label </th>"
+                        temp += "<th> Description </th>"
+                        temp += "<th> BusinessType </th>"
+                        temp += "<th> Key </th>"
+                        temp += "<th> Gross_BE </th>"
+                        temp += "<th> Gross_LossC_BE </th>"
+                        temp += "<th> Gross_RA </th>"
+                        temp += "<th> Gross_LossC_RA </th>"
+                        temp += "<th> Gross_CSM </th>"
+                        temp += "<th> Gross_Actual_BE </th>"
+                        temp += "<th> Gross_Actual_RA </th>"
+                        temp += "<th> Gross_Actual_CSM </th>"
+                        temp += "<th> Reins_BE </th>"
+                        temp += "<th> Reins_LossC_BE </th>"
+                        temp += "<th> Reins_RA </th>"
+                        temp += "<th> Reins_LossC_RA </th>"
+                        temp += "<th> Reins_CSM </th>"
+                        temp += "<th> Reins_Actual_BE </th>"
+                        temp += "<th> Reins_Actual_RA </th>"
+                        temp += "<th> Reins_Actual_CSM </th>"
+                        temp += "</tr>";
+                        dataObj.forEach((u) => {
+                            temp += "<tr>";
+                            temp += "<td>" + u.Cohort + "</td>";
+                            temp += "<td>" + u.Product + "</td>";
+                            temp += "<td>" + u["Sub-Product"] + "</td>";
+                            temp += "<td>" + u["Key Label"] + "</td>";
+                            temp += "<td>" + u.Description + "</td>";
+                            temp += "<td>" + u.BusinessType + "</td>";
+                            temp += "<td>" + u.Key + "</td>";
+                            temp += "<td>" + u.Gross_BE.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Gross_LossC_BE.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Gross_RA.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Gross_LossC_RA.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Gross_CSM.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Gross_Actual_BE.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Gross_Actual_RA.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Gross_Actual_CSM.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Reins_BE.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Reins_LossC_BE.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Reins_RA.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Reins_LossC_RA.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Reins_CSM.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Reins_Actual_BE.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Reins_Actual_RA.toLocaleString() + "</td>";
+                            temp += "<td>" + u.Reins_Actual_CSM.toLocaleString() + "</td>";
+                            temp += "</tr>";
+                        })
+                        //--close for loop
+                        temp += "</table>"; // Close the table element
+                        document.getElementById("data").innerHTML = temp;
+
+
+                    }
+                })
+                .catch(error => console.log(error));
+        }
+
+        function goBack() {
+            window.history.back();
+        }
+
+
+    </script>
+</body>
+
+</html>

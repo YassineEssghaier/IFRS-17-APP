@@ -1,0 +1,61 @@
+This serves as a documentation reagarding the input csv file the user uploads to the app containing the IFRS 17 Cashflow Results.
+
+Below provided details of each columns:
+
+1. Cohort - [Store the respective reported/calculated date values of each corresponding cashflow. The values should be in the format dd/mm/yyyy.]
+2. Product - [Store the respective reported/calcuated Product name of each corresponding cashflow. The format can be text or number.]
+3. Sub-Product - [Store the respective reported/calcuated Sub-Product name of each corresponding cashflow. The format can be text or number.]	
+4. Key Label - [Store the description of the label for each corresponding cashflow.]
+5. Description - [Store the more detailed description around the type of each corresponding cashflow.]
+6. BusinessType - [Store the description around whether the corresponding cashflow is New-business(NB) or In-force(IF)]
+7. Key - [Store the mapping label key for each corresponding cashflow.]
+8. Gross_BE	- [Stores the Best estimate liability cashflow values (gross) (Present value of Cashflows)]
+9. Gross_LossC_BE	- [Stores the loss component values relating to Best estimate liability cashflows (gross).]
+10. Gross_RA - [Stores the Risk Adjustment cashflow values(gross).]
+11. Gross_LossC_RA - [Stores the loss component values relating to Risk Adjustment cashflows(gross).]
+12. Gross_CSM - [Stores the Contractual Service Margin cashflow values(gross).]
+13. Gross_Actual_BE - [Stores the Actual BEL cashflow values(gross).]
+14. Gross_Actual_RA - [Stores the Actual RA cashflow values(gross).]
+15. Gross_Actual_CSM - [Stores the Actual CSM cashflow values(gross).]
+16. Reins_BE	- [Stores the Best estimate liability cashflow values (Reinsurance) (Present value of Cashflows)]
+17. Reins_LossC_BE	- [Stores the loss component values relating to Best estimate liability cashflows (Reinsurance).]
+18. Reins_RA - [Stores the Risk Adjustment cashflow values(Reinsurance).]
+19. Reins_LossC_RA - [Stores the loss component values relating to Risk Adjustment cashflows(Reinsurance).]
+20. Reins_CSM - [Stores the Contractual Service Margin cashflow values(Reinsurance).]
+21. Reins_Actual_BE - [Stores the Actual BEL cashflow values(Reinsurance).]
+22. Reins_Actual_RA - [Stores the Actual RA cashflow values(Reinsurance).]
+23. Reins_Actual_CSM - [Stores the Actual CSM cashflow values(Reinsurance).]
+
+
+To note:
+1. For the model to run, the necessary columns to fill includes
+- Cohort
+- Product
+- Sub-Product
+- BusinessType
+- Key
+- Gross_BE
+- Gross_LossC_BE
+- Gross_RA
+- Gross_LossC_RA
+- Gross_CSM
+- Gross_Actual_BE
+- Gross_Actual_RA
+- Gross_Actual_CSM
+- Reins_BE
+- Reins_LossC_BE
+- Reins_RA
+- Reins_LossC_RA
+- Reins_CSM
+- Reins_Actual_BE
+- Reins_Actual_RA
+- Reins_Actual_CSM
+
+Their should not be not bank spaces in the necessary columns mentioned above. If their is a case of the cell value being "0", please ensure its "0" and not "-" or "".
+
+2. Other columns (Key Label and Description) are only provided as for auditing purpose. Leaving them blank will still allow the model to run smoothly.
+3. Please make sure all the validation checks passes to ensure that the reporting is accurate.
+4. Please make sure that the data file format is a .csv format. 
+5. To have detail understanding on the Mapping Keys description, please refer to the file "Mapping_Labels.xlsx".
+
+ 

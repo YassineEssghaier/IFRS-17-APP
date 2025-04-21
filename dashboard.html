@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>My Form</title>
+    <style>
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #010000;
+            padding: 10px;
+        }
+
+        .menu ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 0 10px;
+        }
+
+        .menu a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            background-image: URL("background.jpg");
+            background-size: cover;
+        }
+
+        #modal-container {
+            display: block;
+            position: fixed;
+            z-index: 1;
+            left: 10;
+            top: 10;
+            width: 140%;
+            height: 500%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        #modal {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 50%;
+            background-color: #fff;
+            z-index: 999;
+            border: 1px solid #000;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 95vh;
+            /* increase the height */
+            width: 100vw;
+            /* increase the width */
+        }
+
+        #iframe {
+            height: 95%;
+            width: 90%;
+            max-height: 87%;
+            max-width: 90%;
+            margin-top: 10%;
+
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ifrs17 app</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="menu">
+            <div class="logo">
+                <a href="index.html">IFRS 17 APP</a>
+            </div>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li>
+                    <a href="#" onclick="fetchstopstreamlit(); return false;">Reset</a>
+                </li>
+                <li>
+                    <a href="#" onclick="startecstask(); return false;">Create Reports</a>
+                </li>
+                <!-- <li>
+                    <a href="#" id="show-modal-button">Show Modal</a>
+                </li> -->
+            </ul>
+    </nav>
+    <div id="modal-container">
+        <div id="modal"
+            style="display: none; position: fixed; z-index: 1; padding-top: 100px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
+            <div style="background-color: white; margin: auto; padding: 20px; border: 1px solid #888; width: 80%;">
+                <form>
+                    <!-- form input fields and button will be created by JavaScript -->
+                </form>
+            </div>
+        </div>
+        <div id="container">
+            <iframe id="iframe" src="demo_iframe.htm" title="Iframe Example"></iframe>
+        </div>
+        <script>
+
+            function startecstask() {
+                // alert("Dashboard task has been launched");
+                fetch('https://m50stal7f0.execute-api.ap-south-1.amazonaws.com/dev/')
+                    .then(res => {
+                        return res.json();
+                    })
+                    .then(data => {
+                        // Show modal before starting the timeout
+                        const modal = document.getElementById("modal");
+                        const modal12 = document.createElement('div');
+                        modal12.setAttribute('id', 'modal12');
+                        modal12.innerHTML = 'Please wait, Reporting Dashboard is being generated....';
+                        modal12.style.position = 'fixed';
+                        modal12.style.top = '50%';
+                        modal12.style.left = '50%';
+                        modal12.style.transform = 'translate(-50%, -50%)';
+                        modal12.style.padding = '40px';
+                        modal12.style.background = '#fff';
+                        modal12.style.border = '1px solid #000';
+                        modal12.style.display = 'block';
+                        const modalContainer = document.getElementById('modal-container');
+                        modalContainer.appendChild(modal12);
+
+                        setTimeout(() => {
+                            // Hide the modal and call auto()
+                            modal12.remove();
+                            auto(data);
+                        }, 39000);
+                    })
+                    .catch(error => console.log(error));
+            }
+
+            function fetchstopstreamlit() {
+                fetch('https://lj6jzw6hvl.execute-api.ap-south-1.amazonaws.com/dev').then(res => {
+                    return res.json();
+                })
+                    .then(data => {
+                        console.log(typeof (data));
+                        dataObj = JSON.parse(data);
+                        console.log(dataObj);
+                        alert(dataObj);
+                        iframe.src = "demo_iframe.htm";
+                    })
+                    .catch(error => console.log(error));
+            }
+            // define the function to handle the form submit event
+            function auto(arnoftask) {
+                const taskArn = arnoftask;
+                const iframe = document.getElementById("iframe");
+                fetch(
+                    "https://bid1daag55.execute-api.ap-south-1.amazonaws.com/dev/",
+                    {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ taskArn }),
+                    }
+                )
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error('Failed to generate the reporting dashboard');
+                        }
+                    })
+                    .then(result => {
+                        setTimeout(function () {
+                            iframe.src = 'http://' + result;
+                            const modalContainer1 = document.getElementById('container');
+                            modalContainer1.appendChild(iframe);
+                            // modal12.remove();
+                            console.log(iframe.src);
+                        }, 2000);
+                    })
+
+                    .catch(error => {
+                        alert(error.message);
+                        modal12.remove();
+                    });
+            };
+
+
+        </script>
+</body>
+
+</html>
+
+
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <title>My Form</title>
+    <style>
+        body {
+            background-image: URL("/Users/keshavsingh/Desktop/IFRS 17(new) app/background.jpg");
+            background-size: cover;
+        }
+
+        #modal-container {
+            display: block;
+            position: fixed;
+            z-index: 1;
+            left: 10;
+            top: 10;
+            width: 140%;
+            height: 500%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        #modal {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            width: 50%;
+            background-color: #fff;
+            z-index: 999;
+            border: 1px solid #000;
+        }
+
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 95vh; -->
+<!-- /* increase the height */
+            width: 100vw;
+            /* increase the width */
+        } -->
+
+<!-- #iframe {
+            height: 95%;
+            width: 90%;
+            max-height: 87%;
+            max-width: 90%;
+            margin-top: 10%;
+
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ifrs17 app</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="menu">
+            <div class="logo">
+                <a href="index.html">IFRS 17 APP Reporting dashboard</a>
+            </div>
+            <ul>
+                <li><a href="calc.html">Return to previous Page</a></li>
+                <li>
+                    <a href="#" onclick="fetchstopstreamlit(); return false;">Perform New Reporting!</a>
+                </li>
+                <li>
+                    <a href="#" onclick="startecstask(); return false;">Start My Latest Dashboard Task!</a>
+                </li> -->
+<!-- <li>
+                    <a href="#" id="show-modal-button">Show Modal</a>
+                </li> -->
+<!-- </ul> -->
+<!-- </nav>
+    <div id="modal-container">
+        <div id="modal"
+            style="display: none; position: fixed; z-index: 1; padding-top: 100px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
+            <div style="background-color: white; margin: auto; padding: 20px; border: 1px solid #888; width: 80%;">
+                <form> -->
+<!-- form input fields and button will be created by JavaScript -->
+<!-- </form>
+            </div>
+        </div>
+        <div id="container">
+            <iframe id="iframe" src="demo_iframe.htm" title="Iframe Example"></iframe>
+        </div>
+        <script>
+
+            function startecstask() {
+                alert("Dashboard task has been launched");
+                fetch('https://m50stal7f0.execute-api.ap-south-1.amazonaws.com/dev/').then(res => {
+                    return res.json();
+                })
+                    .then(data => {
+                        setTimeout(() => auto(data), 15000);
+                    })
+                    .catch(error => console.log(error));
+            }
+            function fetchstopstreamlit() {
+                fetch('https://lj6jzw6hvl.execute-api.ap-south-1.amazonaws.com/dev').then(res => {
+                    return res.json();
+                })
+                    .then(data => {
+                        console.log(typeof (data));
+                        dataObj = JSON.parse(data);
+                        console.log(dataObj);
+                        alert(dataObj);
+                    })
+                    .catch(error => console.log(error));
+            } -->
+<!-- // define the function to handle the form submit event
+            function auto(arnoftask) {
+                const taskArn = arnoftask;
+                const iframe = document.getElementById("iframe");
+                const modal = document.getElementById("modal");
+                const modal12 = document.createElement('div');
+                modal12.setAttribute('id', 'modal12');
+                modal12.innerHTML = 'Please wait, Reporting Dashboard is being generated and Dont forget to press Perform New Reporting before creating another dashboard';
+                modal12.style.position = 'fixed';
+                modal12.style.top = '50%';
+                modal12.style.left = '50%';
+                modal12.style.transform = 'translate(-50%, -50%)';
+                modal12.style.padding = '40px';
+                modal12.style.background = '#fff';
+                modal12.style.border = '1px solid #000';
+                modal12.style.display = 'block';
+                const modalContainer = document.getElementById('modal-container');
+                modalContainer.appendChild(modal12);
+
+                fetch(
+                    "https://bid1daag55.execute-api.ap-south-1.amazonaws.com/dev/",
+                    {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ taskArn }),
+                    }
+                )
+                    .then(response => {
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error('Failed to generate the reporting dashboard');
+                        }
+                    })
+                    .then(result => {
+                        setTimeout(function () {
+                            iframe.src = 'http://' + result;
+                            const modalContainer1 = document.getElementById('container');
+                            modalContainer1.appendChild(iframe);
+                            modal12.remove();
+                            console.log(iframe.src);
+                        }, 2000);
+                    })
+
+                    .catch(error => {
+                        alert(error.message);
+                        modal12.remove();
+                    });
+            };
+
+
+        </script>
+</body>
+
+</html> -->

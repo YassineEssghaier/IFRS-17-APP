@@ -1,0 +1,216 @@
+﻿Cohort,Product,Sub-Product,Key Label,Description,BusinessType,Key,Gross_BE,Gross_LossC_BE,Gross_RA,Gross_LossC_RA,Gross_CSM,Gross_Actual_BE,Gross_Actual_RA,Gross_Actual_CSM,Reins_BE,Reins_LossC_BE,Reins_RA,Reins_LossC_RA,Reins_CSM,Reins_Actual_BE,Reins_Actual_RA,Reins_Actual_CSM
+31/12/2019,ABC,A1,Opening Balance,1-Opening,IF,MAP000,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Opening corrections,7-Additional premiums / premium corrections,IF,MAP001,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Actual Cash Inflows,Premium,NB,MAP002,0,0,0,0,0,253121927,0,0,0,0,0,0,0,-101248770.8,0,0
+31/12/2019,ABC,A1,Expected Cash Inflows,Premium,NB,MAP003,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,New Business,New business,NB,MAP004,252815054,0,74624745,0,22954786,0,0,0,-101126021.6,0,-29849898,0,-9181914.4,0,0,0
+31/12/2019,ABC,A1,New Business changes,NB Expense,NB,MAP005,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Model changes,model chnages,IF,MAP006,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Discount Rate Unwind,NB CSM accretion,NB,MAP007,0,0,0,0,331851,0,0,0,0,0,0,0,-132740.4,0,0,0
+31/12/2019,ABC,A1,Discount Rate Unwind,IF CSM accretion,IF,MAP007,0,0,0,0,807614,0,0,0,0,0,0,0,-323045.6,0,0,0
+31/12/2019,ABC,A1,Discount Rate Unwind,new business unwind,NB,MAP007,16322642,0,855675,0,0,0,0,0,-6529056.8,0,-342270,0,0,0,0,0
+31/12/2019,ABC,A1,Discount Rate Unwind,In force unwind of RDR,IF,MAP007,0,0,10663,0,0,0,0,0,0,0,-4265.2,0,0,0,0,0
+31/12/2019,ABC,A1,Experience Variance,In force unwind of RDR,NB,MAP008,5759360,0,650308,0,-1409669,0,0,0,-2303744,0,-260123.2,0,563867.6,0,0,0
+31/12/2019,ABC,A1,Experience Variance,In force unwind of RDR,IF,MAP008,0,0,-414133,0,2099275,0,0,0,0,0,165653.2,0,-839710,0,0,0
+31/12/2019,ABC,A1,Changes in economic assumptions,4-Demographic assumption changes,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Changes in economic assumptions,5-Expense assumption changes,NB,MAP009,-10000000,0,0,0,0,0,0,0,4000000,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Changes in economic assumptions,,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Changes in economic assumptions,,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Changes in non-economic assumptions,11-Inflation impact on future cashflows,NB,MAP010,67564,0,-507,0,0,0,0,0,-27025.6,0,202.8,0,0,0,0,0
+31/12/2019,ABC,A1,Changes in non-economic assumptions,11-Inflation impact on future cashflows,NB,MAP010,402166,0,-4825,0,0,0,0,0,-160866.4,0,1930,0,0,0,0,0
+31/12/2019,ABC,A1,Changes in non-economic assumptions,10-Economic assumption change (impact of discount rate change),NB,MAP010,4531774,0,-4422097,0,0,0,0,0,-1812709.6,0,1768838.8,0,0,0,0,0
+31/12/2019,ABC,A1,Changes in non-economic assumptions,,NB,MAP010,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Changes in Risk adjustment stress assumptions,8-Risk adjustment stress assumption change,NB,MAP011,0,0,360496,0,189783,0,0,0,0,0,-144198.4,0,-75913.2,0,0,0
+31/12/2019,ABC,A1,Actual Incurred,NB Claims and Expenses,NB,MAP012,0,0,0,0,0,-45000000,0,0,0,0,0,0,0,18000000,0,0
+31/12/2019,ABC,A1,Expected Incurred,NB Claims and Expenses,NB,MAP013,-60563011,0,0,0,0,0,0,0,24225204.4,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Actual Incurred,IF Claims and Expenses,IF,MAP012,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Expected Incurred,IF Claims and Expenses,IF,MAP013,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Actual Release,NB Risk Adjustment,NB,MAP012,0,0,0,0,0,-4153670,0,0,0,0,0,0,0,1661468,0,0
+31/12/2019,ABC,A1,Expected Release,NB Risk Adjustment,NB,MAP013,0,0,-3326000,0,0,0,0,0,0,0,1330400,0,0,0,0,0
+31/12/2019,ABC,A1,Actual Release,IF Risk Adjustment,IF,MAP012,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Expected Release,IF Risk Adjustment,IF,MAP013,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Actual CSM Release,Releases,NB,MAP014,0,0,0,0,0,0,0,-2706547,0,0,0,0,0,0,0,1082618.8
+31/12/2019,ABC,A1,Expected CSM Release,Releases,NB,MAP014,0,0,0,0,-2756117,0,0,0,0,0,0,0,1102446.8,0,0,0
+31/12/2019,ABC,A1,Actual Acquisition Expenses,InsuranceAcquisitionExpenses,NB,MAP015,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Expected Acquisition Expenses,,NB,MAP016,0,0,0,0,0,-2727342,0,0,0,0,0,0,0,1090936.8,0,0
+31/12/2019,ABC,A1,Adjustment to liability for incurred claims,17-Adjustment to liability for incurred claims,NB,MAP017,0,0,0,0,0,-7604996,0,0,0,0,0,0,0,3041998.4,0,0
+31/12/2019,ABC,A1,Losses/reversal of losses on onerous contracts,12-Losses/reversal of losses on onerous contracts,NB,MAP018,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2019,ABC,A1,Actual Effect of change in Time Value of Money on Variable Fee,Actual Effect of change in Time Value of Money on Variable Fee,NB,MAP020,0,0,0,0,-2666662,0,0,0,0,0,0,0,-1066664.8,0,0,0
+31/12/2019,ABC,A1,Expected Effect of change in Time Value of Money on Variable Fee,Expected Effect of change in Time Value of Money on Variable Fee,NB,MAP021,0,0,0,0,0,0,0,-3000000,0,0,0,0,0,0,0,-1200000
+31/12/2019,ABC,A1,Expected Change in Fair Value of Underlying Item,Expected Change in Fair Value of Underlying Item,NB,MAP022,0,0,0,0,-8390091,0,0,-7200000,0,0,0,0,-3356036.4,0,0,-2880000
+31/12/2019,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind TVOG,NB,MAP023,150000,0,0,0,0,130000,0,0,60000,0,0,0,0,52000,0,0
+31/12/2019,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind Entity Share,NB,MAP024,200000,0,0,0,0,190000,0,0,80000,0,0,0,0,76000,0,0
+31/12/2019,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind FairValurUI,NB,MAP025,300000,0,0,0,0,280000,0,0,120000,0,0,0,0,112000,0,0
+31/12/2019,ABC,A1,Closing,Closing Balance,NB,MAP019,209985549,0,68334325,0,11160770,194235919,0,-12906547,-83474219.6,0,-27333730,0,-13309710.4,-77214367.6,0,-2997381.2
+31/12/2020,ABC,A1,Opening Balance,1-Opening,IF,MAP000,209985549,0,68334325,0,11160770,194235919,0,-12906547,-83474219.6,0,-27333730,0,-13309710.4,-77214367.6,0,-2997381.2
+31/12/2020,ABC,A1,Opening corrections,7-Additional premiums / premium corrections,IF,MAP001,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Actual Cash Inflows,Premium,NB,MAP002,0,0,0,0,0,303746312.4,0,0,0,0,0,0,0,-121498525,0,0
+31/12/2020,ABC,A1,Expected Cash Inflows,Premium,NB,MAP003,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,New Business,New business,NB,MAP004,303378064.8,0,89549694,0,27545743.2,0,0,0,-121351225.9,0,-35819877.6,0,-11018297.28,0,0,0
+31/12/2020,ABC,A1,New Business changes,NB Expense,NB,MAP005,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Model changes,model chnages,IF,MAP006,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Discount Rate Unwind,NB CSM accretion,NB,MAP007,0,0,0,0,398221.2,0,0,0,0,0,0,0,-159288.48,0,0,0
+31/12/2020,ABC,A1,Discount Rate Unwind,IF CSM accretion,IF,MAP007,0,0,0,0,969136.8,0,0,0,0,0,0,0,-387654.72,0,0,0
+31/12/2020,ABC,A1,Discount Rate Unwind,new business unwind,NB,MAP007,19587170.4,0,1026810,0,0,0,0,0,-7834868.16,0,-410724,0,0,0,0,0
+31/12/2020,ABC,A1,Discount Rate Unwind,In force unwind of RDR,IF,MAP007,0,0,12795.6,0,0,0,0,0,0,0,-5118.24,0,0,0,0,0
+31/12/2020,ABC,A1,Experience Variance,In force unwind of RDR,NB,MAP008,6911232,0,780369.6,0,-1691602.8,0,0,0,-2764492.8,0,-312147.84,0,676641.12,0,0,0
+31/12/2020,ABC,A1,Experience Variance,In force unwind of RDR,IF,MAP008,0,0,-496959.6,0,2519130,0,0,0,0,0,198783.84,0,-1007652,0,0,0
+31/12/2020,ABC,A1,Changes in economic assumptions,4-Demographic assumption changes,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Changes in economic assumptions,5-Expense assumption changes,NB,MAP009,-12000000,0,0,0,0,0,0,0,4800000,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Changes in economic assumptions,,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Changes in economic assumptions,,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Changes in non-economic assumptions,11-Inflation impact on future cashflows,NB,MAP010,81076.8,0,-608.4,0,0,0,0,0,-32430.72,0,243.36,0,0,0,0,0
+31/12/2020,ABC,A1,Changes in non-economic assumptions,11-Inflation impact on future cashflows,NB,MAP010,482599.2,0,-5790,0,0,0,0,0,-193039.68,0,2316,0,0,0,0,0
+31/12/2020,ABC,A1,Changes in non-economic assumptions,10-Economic assumption change (impact of discount rate change),NB,MAP010,5438128.8,0,-5306516.4,0,0,0,0,0,-2175251.52,0,2122606.56,0,0,0,0,0
+31/12/2020,ABC,A1,Changes in non-economic assumptions,,NB,MAP010,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Changes in Risk adjustment stress assumptions,8-Risk adjustment stress assumption change,NB,MAP011,0,0,432595.2,0,227739.6,0,0,0,0,0,-173038.08,0,-91095.84,0,0,0
+31/12/2020,ABC,A1,Actual Incurred,NB Claims and Expenses,NB,MAP012,0,0,0,0,0,-54000000,0,0,0,0,0,0,0,21600000,0,0
+31/12/2020,ABC,A1,Expected Incurred,NB Claims and Expenses,NB,MAP013,-72675613.2,0,0,0,0,0,0,0,29070245.28,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Actual Incurred,IF Claims and Expenses,IF,MAP012,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Expected Incurred,IF Claims and Expenses,IF,MAP013,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Actual Release,NB Risk Adjustment,NB,MAP012,0,0,0,0,0,-4984404,0,0,0,0,0,0,0,1993761.6,0,0
+31/12/2020,ABC,A1,Expected Release,NB Risk Adjustment,NB,MAP013,0,0,-3991200,0,0,0,0,0,0,0,1596480,0,0,0,0,0
+31/12/2020,ABC,A1,Actual Release,IF Risk Adjustment,IF,MAP012,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Expected Release,IF Risk Adjustment,IF,MAP013,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Actual CSM Release,Releases,NB,MAP014,0,0,0,0,0,0,0,-3247856.4,0,0,0,0,0,0,0,1299142.56
+31/12/2020,ABC,A1,Expected CSM Release,Releases,NB,MAP014,0,0,0,0,-3307340.4,0,0,0,0,0,0,0,1322936.16,0,0,0
+31/12/2020,ABC,A1,Actual Acquisition Expenses,InsuranceAcquisitionExpenses,NB,MAP015,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Expected Acquisition Expenses,,NB,MAP016,0,0,0,0,0,-3272810.4,0,0,0,0,0,0,0,1309124.16,0,0
+31/12/2020,ABC,A1,Adjustment to liability for incurred claims,17-Adjustment to liability for incurred claims,NB,MAP017,0,0,0,0,0,-9125995.2,0,0,0,0,0,0,0,3650398.08,0,0
+31/12/2020,ABC,A1,Losses/reversal of losses on onerous contracts,12-Losses/reversal of losses on onerous contracts,NB,MAP018,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2020,ABC,A1,Actual Effect of change in Time Value of Money on Variable Fee,Actual Effect of change in Time Value of Money on Variable Fee,NB,MAP020,0,0,0,0,-2666662,0,0,0,0,0,0,0,-1066664.8,0,0,0
+31/12/2020,ABC,A1,Expected Effect of change in Time Value of Money on Variable Fee,Expected Effect of change in Time Value of Money on Variable Fee,NB,MAP021,0,0,0,0,0,0,0,-3000000,0,0,0,0,0,0,0,-1200000
+31/12/2020,ABC,A1,Expected Change in Fair Value of Underlying Item,Expected Change in Fair Value of Underlying Item,NB,MAP022,0,0,0,0,-8390091,0,0,-7200000,0,0,0,0,-3356036.4,0,0,-2880000
+31/12/2020,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind TVOG,NB,MAP023,150000,0,0,0,0,130000,0,0,60000,0,0,0,0,52000,0,0
+31/12/2020,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind Entity Share,NB,MAP024,200000,0,0,0,0,190000,0,0,80000,0,0,0,0,76000,0,0
+31/12/2020,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind FairValurUI,NB,MAP025,300000,0,0,0,0,280000,0,0,120000,0,0,0,0,112000,0,0
+31/12/2020,ABC,A1,Closing,Closing Balance,NB,MAP019,461838207.8,0,150335515,0,26765044.6,427199021.8,0,-26354403.4,-183695283.1,0,-60134206,0,-28396822.64,-169919608.8,0,-5778238.64
+31/12/2021,ABC,A1,Opening Balance,1-Opening,IF,MAP000,461838207.8,0,150335515,0,26765044.6,427199021.8,0,-26354403.4,-183695283.1,0,-60134206,0,-28396822.64,-169919608.8,0,-5778238.64
+31/12/2021,ABC,A1,Opening corrections,7-Additional premiums / premium corrections,IF,MAP001,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Actual Cash Inflows,Premium,NB,MAP002,0,0,0,0,0,407020058.6,0,0,0,0,0,0,0,-162808023.4,0,0
+31/12/2021,ABC,A1,Expected Cash Inflows,Premium,NB,MAP003,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,New Business,New business,NB,MAP004,406526606.8,0,119996590,0,36911295.89,0,0,0,-162610642.7,0,-47998635.98,0,-14764518.36,0,0,0
+31/12/2021,ABC,A1,New Business changes,NB Expense,NB,MAP005,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Model changes,model chnages,IF,MAP006,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Discount Rate Unwind,NB CSM accretion,NB,MAP007,0,0,0,0,533616.408,0,0,0,0,0,0,0,-213446.5632,0,0,0
+31/12/2021,ABC,A1,Discount Rate Unwind,IF CSM accretion,IF,MAP007,0,0,0,0,1298643.312,0,0,0,0,0,0,0,-519457.3248,0,0,0
+31/12/2021,ABC,A1,Discount Rate Unwind,new business unwind,NB,MAP007,26246808.34,0,1375925.4,0,0,0,0,0,-10498723.33,0,-550370.16,0,0,0,0,0
+31/12/2021,ABC,A1,Discount Rate Unwind,In force unwind of RDR,IF,MAP007,0,0,17146.104,0,0,0,0,0,0,0,-6858.4416,0,0,0,0,0
+31/12/2021,ABC,A1,Experience Variance,In force unwind of RDR,NB,MAP008,9261050.88,0,1045695.264,0,-2266747.752,0,0,0,-3704420.352,0,-418278.1056,0,906699.1008,0,0,0
+31/12/2021,ABC,A1,Experience Variance,In force unwind of RDR,IF,MAP008,0,0,-665925.864,0,3375634.2,0,0,0,0,0,266370.3456,0,-1350253.68,0,0,0
+31/12/2021,ABC,A1,Changes in economic assumptions,4-Demographic assumption changes,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Changes in economic assumptions,5-Expense assumption changes,NB,MAP009,-16080000,0,0,0,0,0,0,0,6432000,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Changes in economic assumptions,,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Changes in economic assumptions,,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Changes in non-economic assumptions,11-Inflation impact on future cashflows,NB,MAP010,108642.912,0,-815.256,0,0,0,0,0,-43457.1648,0,326.1024,0,0,0,0,0
+31/12/2021,ABC,A1,Changes in non-economic assumptions,11-Inflation impact on future cashflows,NB,MAP010,646682.928,0,-7758.6,0,0,0,0,0,-258673.1712,0,3103.44,0,0,0,0,0
+31/12/2021,ABC,A1,Changes in non-economic assumptions,10-Economic assumption change (impact of discount rate change),NB,MAP010,7287092.592,0,-7110731.976,0,0,0,0,0,-2914837.037,0,2844292.79,0,0,0,0,0
+31/12/2021,ABC,A1,Changes in non-economic assumptions,,NB,MAP010,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Changes in Risk adjustment stress assumptions,8-Risk adjustment stress assumption change,NB,MAP011,0,0,579677.568,0,305171.064,0,0,0,0,0,-231871.0272,0,-122068.4256,0,0,0
+31/12/2021,ABC,A1,Actual Incurred,NB Claims and Expenses,NB,MAP012,0,0,0,0,0,-72360000,0,0,0,0,0,0,0,28944000,0,0
+31/12/2021,ABC,A1,Expected Incurred,NB Claims and Expenses,NB,MAP013,-97385321.69,0,0,0,0,0,0,0,38954128.68,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Actual Incurred,IF Claims and Expenses,IF,MAP012,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Expected Incurred,IF Claims and Expenses,IF,MAP013,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Actual Release,NB Risk Adjustment,NB,MAP012,0,0,0,0,0,-6679101.36,0,0,0,0,0,0,0,2671640.544,0,0
+31/12/2021,ABC,A1,Expected Release,NB Risk Adjustment,NB,MAP013,0,0,-5348208,0,0,0,0,0,0,0,2139283.2,0,0,0,0,0
+31/12/2021,ABC,A1,Actual Release,IF Risk Adjustment,IF,MAP012,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Expected Release,IF Risk Adjustment,IF,MAP013,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Actual CSM Release,Releases,NB,MAP014,0,0,0,0,0,0,0,-4352127.576,0,0,0,0,0,0,0,1740851.03
+31/12/2021,ABC,A1,Expected CSM Release,Releases,NB,MAP014,0,0,0,0,-4431836.136,0,0,0,0,0,0,0,1772734.454,0,0,0
+31/12/2021,ABC,A1,Actual Acquisition Expenses,InsuranceAcquisitionExpenses,NB,MAP015,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Expected Acquisition Expenses,,NB,MAP016,0,0,0,0,0,-4385565.936,0,0,0,0,0,0,0,1754226.374,0,0
+31/12/2021,ABC,A1,Adjustment to liability for incurred claims,17-Adjustment to liability for incurred claims,NB,MAP017,0,0,0,0,0,-12228833.57,0,0,0,0,0,0,0,4891533.427,0,0
+31/12/2021,ABC,A1,Losses/reversal of losses on onerous contracts,12-Losses/reversal of losses on onerous contracts,NB,MAP018,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2021,ABC,A1,Actual Effect of change in Time Value of Money on Variable Fee,Actual Effect of change in Time Value of Money on Variable Fee,NB,MAP020,0,0,0,0,-2666662,0,0,0,0,0,0,0,-1066664.8,0,0,0
+31/12/2021,ABC,A1,Expected Effect of change in Time Value of Money on Variable Fee,Expected Effect of change in Time Value of Money on Variable Fee,NB,MAP021,0,0,0,0,0,0,0,-3000000,0,0,0,0,0,0,0,-1200000
+31/12/2021,ABC,A1,Expected Change in Fair Value of Underlying Item,Expected Change in Fair Value of Underlying Item,NB,MAP022,0,0,0,0,-8390091,0,0,-7200000,0,0,0,0,-3356036.4,0,0,-2880000
+31/12/2021,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind TVOG,NB,MAP023,150000,0,0,0,0,130000,0,0,60000,0,0,0,0,52000,0,0
+31/12/2021,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind Entity Share,NB,MAP024,200000,0,0,0,0,190000,0,0,80000,0,0,0,0,76000,0,0
+31/12/2021,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind FairValurUI,NB,MAP025,300000,0,0,0,0,280000,0,0,120000,0,0,0,0,112000,0,0
+31/12/2021,ABC,A1,Closing,Closing Balance,NB,MAP019,799099770.6,0,260217109.6,0,51434068.59,739165579.5,0,-40906530.98,-318079908.2,0,-104086843.8,0,-47109834.64,-294226231.8,0,-8117387.61
+31/12/2022,ABC,A1,Opening Balance,1-Opening,IF,MAP000,799099770.6,0,260217109.6,0,51434068.59,739165579.5,0,-40906530.98,-318079908.2,0,-104086843.8,0,-47109834.64,-294226231.8,0,-8117387.61
+31/12/2022,ABC,A1,Opening corrections,7-Additional premiums / premium corrections,IF,MAP001,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Actual Cash Inflows,Premium,NB,MAP002,0,0,0,0,0,273371681.2,0,0,0,0,0,0,0,-109348672.5,0,0
+31/12/2022,ABC,A1,Expected Cash Inflows,Premium,NB,MAP003,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,New Business,New business,NB,MAP004,273040258.3,0,80594724.6,0,24791168.88,0,0,0,-109216103.3,0,-32237889.84,0,-9916467.552,0,0,0
+31/12/2022,ABC,A1,New Business changes,NB Expense,NB,MAP005,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Model changes,model chnages,IF,MAP006,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Discount Rate Unwind,NB CSM accretion,NB,MAP007,0,0,0,0,358399.08,0,0,0,0,0,0,0,-143359.632,0,0,0
+31/12/2022,ABC,A1,Discount Rate Unwind,IF CSM accretion,IF,MAP007,0,0,0,0,872223.12,0,0,0,0,0,0,0,-348889.248,0,0,0
+31/12/2022,ABC,A1,Discount Rate Unwind,new business unwind,NB,MAP007,17628453.36,0,924129,0,0,0,0,0,-7051381.344,0,-369651.6,0,0,0,0,0
+31/12/2022,ABC,A1,Discount Rate Unwind,In force unwind of RDR,IF,MAP007,0,0,11516.04,0,0,0,0,0,0,0,-4606.416,0,0,0,0,0
+31/12/2022,ABC,A1,Experience Variance,In force unwind of RDR,NB,MAP008,6220108.8,0,702332.64,0,-1522442.52,0,0,0,-2488043.52,0,-280933.056,0,608977.008,0,0,0
+31/12/2022,ABC,A1,Experience Variance,In force unwind of RDR,IF,MAP008,0,0,-447263.64,0,2267217,0,0,0,0,0,178905.456,0,-906886.8,0,0,0
+31/12/2022,ABC,A1,Changes in economic assumptions,4-Demographic assumption changes,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Changes in economic assumptions,5-Expense assumption changes,NB,MAP009,-10800000,0,0,0,0,0,0,0,4320000,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Changes in economic assumptions,,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Changes in economic assumptions,,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Changes in non-economic assumptions,11-Inflation impact on future cashflows,NB,MAP010,72969.12,0,-547.56,0,0,0,0,0,-29187.648,0,219.024,0,0,0,0,0
+31/12/2022,ABC,A1,Changes in non-economic assumptions,11-Inflation impact on future cashflows,NB,MAP010,434339.28,0,-5211,0,0,0,0,0,-173735.712,0,2084.4,0,0,0,0,0
+31/12/2022,ABC,A1,Changes in non-economic assumptions,10-Economic assumption change (impact of discount rate change),NB,MAP010,4894315.92,0,-4775864.76,0,0,0,0,0,-1957726.368,0,1910345.904,0,0,0,0,0
+31/12/2022,ABC,A1,Changes in non-economic assumptions,,NB,MAP010,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Changes in Risk adjustment stress assumptions,8-Risk adjustment stress assumption change,NB,MAP011,0,0,389335.68,0,204965.64,0,0,0,0,0,-155734.272,0,-81986.256,0,0,0
+31/12/2022,ABC,A1,Actual Incurred,NB Claims and Expenses,NB,MAP012,0,0,0,0,0,-48600000,0,0,0,0,0,0,0,19440000,0,0
+31/12/2022,ABC,A1,Expected Incurred,NB Claims and Expenses,NB,MAP013,-65408051.88,0,0,0,0,0,0,0,26163220.75,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Actual Incurred,IF Claims and Expenses,IF,MAP012,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Expected Incurred,IF Claims and Expenses,IF,MAP013,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Actual Release,NB Risk Adjustment,NB,MAP012,0,0,0,0,0,-4485963.6,0,0,0,0,0,0,0,1794385.44,0,0
+31/12/2022,ABC,A1,Expected Release,NB Risk Adjustment,NB,MAP013,0,0,-3592080,0,0,0,0,0,0,0,1436832,0,0,0,0,0
+31/12/2022,ABC,A1,Actual Release,IF Risk Adjustment,IF,MAP012,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Expected Release,IF Risk Adjustment,IF,MAP013,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Actual CSM Release,Releases,NB,MAP014,0,0,0,0,0,0,0,-2923070.76,0,0,0,0,0,0,0,1169228.304
+31/12/2022,ABC,A1,Expected CSM Release,Releases,NB,MAP014,0,0,0,0,-2976606.36,0,0,0,0,0,0,0,1190642.544,0,0,0
+31/12/2022,ABC,A1,Actual Acquisition Expenses,InsuranceAcquisitionExpenses,NB,MAP015,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Expected Acquisition Expenses,,NB,MAP016,0,0,0,0,0,-2945529.36,0,0,0,0,0,0,0,1178211.744,0,0
+31/12/2022,ABC,A1,Adjustment to liability for incurred claims,17-Adjustment to liability for incurred claims,NB,MAP017,0,0,0,0,0,-8213395.68,0,0,0,0,0,0,0,3285358.272,0,0
+31/12/2022,ABC,A1,Losses/reversal of losses on onerous contracts,12-Losses/reversal of losses on onerous contracts,NB,MAP018,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2022,ABC,A1,Actual Effect of change in Time Value of Money on Variable Fee,Actual Effect of change in Time Value of Money on Variable Fee,NB,MAP020,0,0,0,0,-2666662,0,0,0,0,0,0,0,-1066664.8,0,0,0
+31/12/2022,ABC,A1,Expected Effect of change in Time Value of Money on Variable Fee,Expected Effect of change in Time Value of Money on Variable Fee,NB,MAP021,0,0,0,0,0,0,0,-3000000,0,0,0,0,0,0,0,-1200000
+31/12/2022,ABC,A1,Expected Change in Fair Value of Underlying Item,Expected Change in Fair Value of Underlying Item,NB,MAP022,0,0,0,0,-8390091,0,0,-7200000,0,0,0,0,-3356036.4,0,0,-2880000
+31/12/2022,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind TVOG,NB,MAP023,150000,0,0,0,0,130000,0,0,60000,0,0,0,0,52000,0,0
+31/12/2022,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind Entity Share,NB,MAP024,200000,0,0,0,0,190000,0,0,80000,0,0,0,0,76000,0,0
+31/12/2022,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind FairValurUI,NB,MAP025,300000,0,0,0,0,280000,0,0,120000,0,0,0,0,112000,0,0
+31/12/2022,ABC,A1,Closing,Closing Balance,NB,MAP019,1025832163,0,334018180.6,0,64372240.43,948892372.1,0,-54029601.74,-408252865.3,0,-133607272.2,0,-61130505.77,-377636948.9,0,-11028159.31
+31/12/2023,ABC,A1,Opening Balance,1-Opening,IF,MAP000,1025832163,0,334018180.6,0,64372240.43,948892372.1,0,-54029601.74,-408252865.3,0,-133607272.2,0,-61130505.77,-377636948.9,0,-11028159.31
+31/12/2023,ABC,A1,Opening corrections,7-Additional premiums / premium corrections,IF,MAP001,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Actual Cash Inflows,Premium,NB,MAP002,0,0,0,0,0,366318052.8,0,0,0,0,0,0,0,-146527221.1,0,0
+31/12/2023,ABC,A1,Expected Cash Inflows,Premium,NB,MAP003,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,New Business,New business,NB,MAP004,365873946.1,0,107996931,0,33220166.3,0,0,0,-146349578.5,0,-43198772.39,0,-13288066.52,0,0,0
+31/12/2023,ABC,A1,New Business changes,NB Expense,NB,MAP005,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Model changes,model chnages,IF,MAP006,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Discount Rate Unwind,NB CSM accretion,NB,MAP007,0,0,0,0,480254.7672,0,0,0,0,0,0,0,-192101.9069,0,0,0
+31/12/2023,ABC,A1,Discount Rate Unwind,IF CSM accretion,IF,MAP007,0,0,0,0,1168778.981,0,0,0,0,0,0,0,-467511.5923,0,0,0
+31/12/2023,ABC,A1,Discount Rate Unwind,new business unwind,NB,MAP007,23622127.5,0,1238332.86,0,0,0,0,0,-9448851.001,0,-495333.144,0,0,0,0,0
+31/12/2023,ABC,A1,Discount Rate Unwind,In force unwind of RDR,IF,MAP007,0,0,15431.4936,0,0,0,0,0,0,0,-6172.59744,0,0,0,0,0
+31/12/2023,ABC,A1,Experience Variance,In force unwind of RDR,NB,MAP008,8334945.792,0,941125.7376,0,-2040072.977,0,0,0,-3333978.317,0,-376450.295,0,816029.1907,0,0,0
+31/12/2023,ABC,A1,Experience Variance,In force unwind of RDR,IF,MAP008,0,0,-599333.2776,0,3038070.78,0,0,0,0,0,239733.311,0,-1215228.312,0,0,0
+31/12/2023,ABC,A1,Changes in economic assumptions,4-Demographic assumption changes,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Changes in economic assumptions,5-Expense assumption changes,NB,MAP009,-14472000,0,0,0,0,0,0,0,5788800,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Changes in economic assumptions,,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Changes in economic assumptions,,NB,MAP009,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Changes in non-economic assumptions,11-Inflation impact on future cashflows,NB,MAP010,97778.6208,0,-733.7304,0,0,0,0,0,-39111.44832,0,293.49216,0,0,0,0,0
+31/12/2023,ABC,A1,Changes in non-economic assumptions,11-Inflation impact on future cashflows,NB,MAP010,582014.6352,0,-6982.74,0,0,0,0,0,-232805.8541,0,2793.096,0,0,0,0,0
+31/12/2023,ABC,A1,Changes in non-economic assumptions,10-Economic assumption change (impact of discount rate change),NB,MAP010,6558383.333,0,-6399658.778,0,0,0,0,0,-2623353.333,0,2559863.511,0,0,0,0,0
+31/12/2023,ABC,A1,Changes in non-economic assumptions,,NB,MAP010,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Changes in Risk adjustment stress assumptions,8-Risk adjustment stress assumption change,NB,MAP011,0,0,521709.8112,0,274653.9576,0,0,0,0,0,-208683.9245,0,-109861.583,0,0,0
+31/12/2023,ABC,A1,Actual Incurred,NB Claims and Expenses,NB,MAP012,0,0,0,0,0,-65124000,0,0,0,0,0,0,0,26049600,0,0
+31/12/2023,ABC,A1,Expected Incurred,NB Claims and Expenses,NB,MAP013,-87646789.52,0,0,0,0,0,0,0,35058715.81,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Actual Incurred,IF Claims and Expenses,IF,MAP012,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Expected Incurred,IF Claims and Expenses,IF,MAP013,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Actual Release,NB Risk Adjustment,NB,MAP012,0,0,0,0,0,-6011191.224,0,0,0,0,0,0,0,2404476.49,0,0
+31/12/2023,ABC,A1,Expected Release,NB Risk Adjustment,NB,MAP013,0,0,-4813387.2,0,0,0,0,0,0,0,1925354.88,0,0,0,0,0
+31/12/2023,ABC,A1,Actual Release,IF Risk Adjustment,IF,MAP012,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Expected Release,IF Risk Adjustment,IF,MAP013,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Actual CSM Release,Releases,NB,MAP014,0,0,0,0,0,0,0,-3916914.818,0,0,0,0,0,0,0,1566765.927
+31/12/2023,ABC,A1,Expected CSM Release,Releases,NB,MAP014,0,0,0,0,-3988652.522,0,0,0,0,0,0,0,1595461.009,0,0,0
+31/12/2023,ABC,A1,Actual Acquisition Expenses,InsuranceAcquisitionExpenses,NB,MAP015,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Expected Acquisition Expenses,,NB,MAP016,0,0,0,0,0,-3947009.342,0,0,0,0,0,0,0,1578803.737,0,0
+31/12/2023,ABC,A1,Adjustment to liability for incurred claims,17-Adjustment to liability for incurred claims,NB,MAP017,0,0,0,0,0,-11005950.21,0,0,0,0,0,0,0,4402380.084,0,0
+31/12/2023,ABC,A1,Losses/reversal of losses on onerous contracts,12-Losses/reversal of losses on onerous contracts,NB,MAP018,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+31/12/2023,ABC,A1,Actual Effect of change in Time Value of Money on Variable Fee,Actual Effect of change in Time Value of Money on Variable Fee,NB,MAP020,0,0,0,0,-2666662,0,0,0,0,0,0,0,-1066664.8,0,0,0
+31/12/2023,ABC,A1,Expected Effect of change in Time Value of Money on Variable Fee,Expected Effect of change in Time Value of Money on Variable Fee,NB,MAP021,0,0,0,0,0,0,0,-3000000,0,0,0,0,0,0,0,-1200000
+31/12/2023,ABC,A1,Expected Change in Fair Value of Underlying Item,Expected Change in Fair Value of Underlying Item,NB,MAP022,0,0,0,0,-8390091,0,0,-7200000,0,0,0,0,-3356036.4,0,0,-2880000
+31/12/2023,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind TVOG,NB,MAP023,150000,0,0,0,0,130000,0,0,60000,0,0,0,0,52000,0,0
+31/12/2023,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind Entity Share,NB,MAP024,200000,0,0,0,0,190000,0,0,80000,0,0,0,0,76000,0,0
+31/12/2023,ABC,A1,Discount Rate Unwind ,Discount Rate Unwind FairValurUI,NB,MAP025,300000,0,0,0,0,280000,0,0,120000,0,0,0,0,112000,0,0
+31/12/2023,ABC,A1,Closing,Closing Balance,NB,MAP019,1329432570,0,432911615.8,0,85468686.71,1229722274,0,-68146516.55,-529173028,0,-173164646.3,0,-78414486.69,-489488909.6,0,-13541393.38

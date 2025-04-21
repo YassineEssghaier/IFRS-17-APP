@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>Document</title>
+  <style>
+    /* table {
+      overflow-y: scroll;
+      height: 500px;
+      width: 1400px;
+      display: block;
+      color: #000404;
+    } */
+    body {
+      overflow: hidden;
+    }
+
+    table {
+      margin-bottom: 10%;
+      margin-top: 10%;
+      height: 700px;
+      width: 1400px;
+      overflow: auto;
+      display: block;
+      color: #f1f9f9;
+    }
+
+    nav li.right {
+      margin-left: 1100px;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #010000;
+      padding: 10px;
+    }
+
+    .menu ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      margin: 0 10px;
+    }
+
+    .menu a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    button {
+      font-weight: bold;
+      border-width: 3px;
+      border-style: solid;
+      border-color: black;
+      padding: 10px 20px;
+      margin-right: 10px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 0;
+    }
+
+
+    /* th, tr {
+      position: sticky;
+      top: 0;
+      background-color: #000404;
+    } */
+
+    td,
+    th {
+      background-color: #000404;
+      padding: 15px;
+      text-align: left;
+      color: aliceblue;
+      border: 1px solid rgb(90, 104, 12);
+      border-collapse: collapse;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Ifrs17 app</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="index.html">IFRS 17 APP</a>
+      </div>
+      <ul>
+        <!-- <li>
+          <a href="#" onclick="upload(); return false;"> Upload</a>
+        </li>  -->
+        <li>
+          <a href="index.html">HOME</a>
+        </li>
+        <li>
+          <a href="calc.html">Return </a>
+        </li>
+        <li><a href="#" onclick="fetchdata1(); return false;">View BEL Report</a></li>
+        <li> <a href="#" onclick="fetchdata2(); return false;">View CSM Report</a></li>
+        <li> <a href="#" onclick="fetchdata3(); return false;">View RA Report</a></li>
+        <li><a href="#" onclick="fetchdata4(); return false;">View ICL Report</a></li>
+        <!-- <li><button onclick="fetchecs()">Perform Reporting</button></li> -->
+      </ul>
+
+    </div>
+  </nav>
+  <!-- <nav>
+    <div class="menu">
+      <div class="logo">
+        <ul>
+          <li>
+            <a href="index.html">HOME</a>
+          </li>
+          <li>
+            <a href="#" onclick="fetchdata1(); return false;">show BEL data</a>
+          </li>
+          <li>
+            <a href="#" onclick="fetchdata2(); return false;">show CSM data</a>
+          </li>
+          <li>
+            <a href="#" onclick="fetchdata3(); return false;">show RA data</a>
+          </li>
+          <li>
+            <a href="#" onclick="fetchdata3(); return false;">show TCL data</a>
+          </li>
+        </ul>
+  </nav> -->
+  <div class="img"></div>
+  <div class="center">
+    <div class="container">
+      <table class="table table-stripped">
+        <thead>
+          <tr>
+          </tr>
+        </thead>
+        <tbody id="data">
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script>
+    var bel;
+    var obj;
+    var dataObj;
+    function fetchdata1() {
+      fetch('https://f4yzhilzxf.execute-api.ap-south-1.amazonaws.com/dev').then(res => {
+        return res.json();
+      })
+        .then(data => {
+          console.log(typeof (data));
+          dataObj = JSON.parse(data);
+          //console.log(data);
+          console.log(typeof (dataObj));
+          //console.log(dataObj);
+          //obj = JSON.parse(dataObj);
+          //console.log(obj);
+          //console.log(typeof (obj));
+          if (dataObj.length > 0) {
+            var temp = "";
+
+            //--start of loop
+            // temp += "<h2 style='color:white;'>This is BEL Result</h2>"; // Add the table name here
+            temp += "<th colspan='13' style='color:green; text-align:center;'>Reconciliation of Best Estimate Liability</th>";
+            temp += "<table>"; // Start the table element
+            temp += "<tr>";
+            temp += "<th> index </th>"
+            temp += "<th> Period </th>"
+            temp += "<th> Product </th>"
+            temp += "<th> Sub-Product </th>"
+            temp += "<th> Opening Balance </th>"
+            temp += "<th> Changes: New Business </th>"
+            temp += "<th> Changes: Assumptions </th>"
+            temp += "<th> Insurance Service Expense</th>"
+            temp += "<th> Changes: Experience </th>"
+            temp += "<th> Changes: Release </th>"
+            temp += "<th> Changes Related to Past Service </th>"
+            temp += "<th> Onerous Contracts </th>"
+            temp += "<th> Closing Balance </th>"
+            temp += "</tr>";
+            dataObj.forEach((u) => {
+              temp += "<tr>";
+              temp += "<td>" + u[0] + "</td>";
+              temp += "<td>" + u[1] + "</td>";
+              temp += "<td>" + u[2] + "</td>";
+              temp += "<td>" + u[3] + "</td>";
+              temp += "<td>" + u[4].toLocaleString() + "</td>";
+              temp += "<td>" + u[5].toLocaleString() + "</td>";
+              temp += "<td>" + u[6].toLocaleString() + "</td>";
+              temp += "<td>" + u[7].toLocaleString() + "</td>";
+              temp += "<td>" + u[8].toLocaleString() + "</td>";
+              temp += "<td>" + u[9].toLocaleString() + "</td>";
+              temp += "<td>" + u[10].toLocaleString() + "</td>";
+              temp += "<td>" + u[11].toLocaleString() + "</td>";
+              temp += "<td>" + u[12].toLocaleString() + "</td>";
+              temp += "</tr>";
+            })
+            //--close for loop
+            temp += "</table>"; // Close the table element
+            document.getElementById("data").innerHTML = temp;
+          }
+        })
+        .catch(error => console.log(error));
+    }
+    function fetchdata2() {
+      fetch('https://c9g8k5nfb0.execute-api.ap-south-1.amazonaws.com/dev').then(res => {
+        return res.json();
+      })
+        .then(data => {
+          console.log(typeof (data));
+          dataObj = JSON.parse(data);
+          //console.log(data);
+          console.log(typeof (dataObj));
+          //console.log(dataObj);
+          //obj = JSON.parse(dataObj);
+          //console.log(obj);
+          //console.log(typeof (obj));
+          if (dataObj.length > 0) {
+            var temp = "";
+            //--start of loop
+            temp += "<th colspan='13' style='color:green; text-align:center;'>Reconciliation of Contractual Service Margin</th>";
+            temp += "<table>"; // Start the table element
+            temp += "<tr>";
+            temp += "<th> index </th>"
+            temp += "<th> Period </th>"
+            temp += "<th> Product </th>"
+            temp += "<th> Sub-Product </th>"
+            temp += "<th> Opening Balance </th>"
+            temp += "<th> Changes: New Business </th>"
+            temp += "<th> Changes: Assumptions </th>"
+            temp += "<th> Insurance Service Expense</th>"
+            temp += "<th> Changes: Experience </th>"
+            temp += "<th> Changes: Release </th>"
+            temp += "<th> Changes Related to Past Service </th>"
+            temp += "<th> Onerous Contracts </th>"
+            temp += "<th> Closing Balance </th>"
+            temp += "</tr>";
+            dataObj.forEach((u) => {
+              temp += "<tr>";
+              temp += "<td>" + u[0] + "</td>";
+              temp += "<td>" + u[1] + "</td>";
+              temp += "<td>" + u[2] + "</td>";
+              temp += "<td>" + u[3] + "</td>";
+              temp += "<td>" + u[4].toLocaleString() + "</td>";
+              temp += "<td>" + u[5].toLocaleString() + "</td>";
+              temp += "<td>" + u[6].toLocaleString() + "</td>";
+              temp += "<td>" + u[7].toLocaleString() + "</td>";
+              temp += "<td>" + u[8].toLocaleString() + "</td>";
+              temp += "<td>" + u[9].toLocaleString() + "</td>";
+              temp += "<td>" + u[10].toLocaleString() + "</td>";
+              temp += "<td>" + u[11].toLocaleString() + "</td>";
+              temp += "<td>" + u[12].toLocaleString() + "</td>";
+              temp += "</tr>";
+            })
+            //--close for loop
+            temp += "</table>"; // Close the table element
+            document.getElementById("data").innerHTML = temp;
+
+          }
+        })
+        .catch(error => console.log(error));
+    }
+    function fetchdata3() {
+      fetch('https://b0ia96fyh3.execute-api.ap-south-1.amazonaws.com/dev').then(res => {
+        return res.json();
+      })
+        .then(data => {
+          console.log(typeof (data));
+          dataObj = JSON.parse(data);
+          //console.log(data);
+          console.log(typeof (dataObj));
+          //console.log(dataObj);
+          //obj = JSON.parse(dataObj);
+          //console.log(obj);
+          //console.log(typeof (obj));
+          if (dataObj.length > 0) {
+            var temp = "";
+
+            //--start of loop
+            temp += "<th colspan='13' style='color:green; text-align:center;'>Reconciliation of Risk Adjustment</th>";
+            temp += "<table>"; // Start the table element
+            temp += "<tr>";
+            temp += "<th> index </th>"
+            temp += "<th> Period </th>"
+            temp += "<th> Product </th>"
+            temp += "<th> Sub-Product </th>"
+            temp += "<th> Opening Balance </th>"
+            temp += "<th> Changes: New Business </th>"
+            temp += "<th> Changes: Assumptions </th>"
+            temp += "<th> Insurance Service Expense</th>"
+            temp += "<th> Changes: Experience </th>"
+            temp += "<th> Changes: Release </th>"
+            temp += "<th> Changes Related to Past Service </th>"
+            temp += "<th> Onerous Contracts </th>"
+            temp += "<th> Closing Balance </th>"
+            temp += "</tr>";
+            dataObj.forEach((u) => {
+              temp += "<tr>";
+              temp += "<td>" + u[0] + "</td>";
+              temp += "<td>" + u[1] + "</td>";
+              temp += "<td>" + u[2] + "</td>";
+              temp += "<td>" + u[3] + "</td>";
+              temp += "<td>" + u[4].toLocaleString() + "</td>";
+              temp += "<td>" + u[5].toLocaleString() + "</td>";
+              temp += "<td>" + u[6].toLocaleString() + "</td>";
+              temp += "<td>" + u[7].toLocaleString() + "</td>";
+              temp += "<td>" + u[8].toLocaleString() + "</td>";
+              temp += "<td>" + u[9].toLocaleString() + "</td>";
+              temp += "<td>" + u[10].toLocaleString() + "</td>";
+              temp += "<td>" + u[11].toLocaleString() + "</td>";
+              temp += "<td>" + u[12].toLocaleString() + "</td>";
+              temp += "</tr>";
+            })
+            //--close for loop
+            temp += "</table>"; // Close the table element
+            document.getElementById("data").innerHTML = temp;
+
+          }
+
+        })
+        .catch(error => console.log(error));
+    }
+    function fetchdata4() {
+      fetch('https://9h47bljzij.execute-api.ap-south-1.amazonaws.com/dev').then(res => {
+        return res.json();
+      })
+        .then(data => {
+          console.log(typeof (data));
+          dataObj = JSON.parse(data);
+          //console.log(data);
+          console.log(typeof (dataObj));
+          //console.log(dataObj);
+          //obj = JSON.parse(dataObj);
+          //console.log(obj);
+          //console.log(typeof (obj));
+          if (dataObj.length > 0) {
+            var temp = "";
+
+            //--start of loop
+            temp += "<th colspan='123' style='color:green; text-align:center;'>Reconciliation of Insurance Contract Liability</th>";
+            temp += "<table>"; // Start the table element
+            temp += "<tr>";
+            temp += "<th> index </th>"
+            temp += "<th> Period </th>"
+            temp += "<th> Product </th>"
+            temp += "<th> Sub-Product </th>"
+            temp += "<th> Opening Balance </th>"
+            temp += "<th> Changes: New Business </th>"
+            temp += "<th> Changes: Assumptions </th>"
+            temp += "<th> Insurance Service Expense</th>"
+            temp += "<th> Changes: Experience </th>"
+            temp += "<th> Changes: Release </th>"
+            temp += "<th> Changes Related to Past Service </th>"
+            temp += "<th> Onerous Contracts </th>"
+            temp += "<th> Closing Balance </th>"
+            temp += "</tr>";
+            dataObj.forEach((u) => {
+              temp += "<tr>";
+              temp += "<td>" + u[0] + "</td>";
+              temp += "<td>" + u[1] + "</td>";
+              temp += "<td>" + u[2] + "</td>";
+              temp += "<td>" + u[3] + "</td>";
+              temp += "<td>" + u[4].toLocaleString() + "</td>";
+              temp += "<td>" + u[5].toLocaleString() + "</td>";
+              temp += "<td>" + u[6].toLocaleString() + "</td>";
+              temp += "<td>" + u[7].toLocaleString() + "</td>";
+              temp += "<td>" + u[8].toLocaleString() + "</td>";
+              temp += "<td>" + u[9].toLocaleString() + "</td>";
+              temp += "<td>" + u[10].toLocaleString() + "</td>";
+              temp += "<td>" + u[11].toLocaleString() + "</td>";
+              temp += "<td>" + u[12].toLocaleString() + "</td>";  
+              temp += "</tr>";
+            })
+            //--close for loop
+            temp += "</table>"; // Close the table element
+            document.getElementById("data").innerHTML = temp;
+
+          }
+
+        })
+        .catch(error => console.log(error));
+    }
+    function fetchdata5() {
+      fetch('https://dvfkykfkq8.execute-api.ap-south-1.amazonaws.com/dev/').then(res => {
+        return res.json();
+      })
+        .then(data => {
+          console.log(typeof (data));
+          dataObj = JSON.parse(data);
+          //console.log(data);
+          console.log(typeof (dataObj));
+          //console.log(dataObj);
+          //obj = JSON.parse(dataObj);
+          //console.log(obj);
+          //console.log(typeof (obj));
+          if (dataObj.length > 0) {
+            var temp = "";
+            //--start of loop
+            temp += "<tr>";
+            temp += "<th> period </th>"
+            temp += "<th> Product </th>"
+            temp += "<th> Sub-Product </th>"
+            temp += "<th> Measure </th>"
+            temp += "<th> net balanace SOM</th>"
+            temp += "<th>  CSM recognised in profit or loss for the services provided </th>"
+            temp += "<th> Risk Adjustment recognised for the risk expired </th>"
+            temp += "<th> Experience adjustments</th>"
+            temp += "<th> Changes that relate to current service </th>"
+            temp += "<th> Changes in estimates that adjust the CSM </th>"
+            temp += "<th>  Changes in onerous contract losses or reversal of losses </th>"
+            temp += "<th> Contracts initially recognised in the period </th>"
+            temp += "<th> Changes that relate to future service </th>"
+            temp += "<th> Adjustments to liabilities for incurred claims </th>"
+            temp += "<th>  Changes that relate to past service </th>"
+            temp += "<th> Insurance service result </th>"
+            temp += "<th> Finance expenses from insurance contracts issued, Effects of movements in exchange rates </th>"
+            temp += "<th>  Effects of movements in exchange rates </th>"
+            temp += "<th>  Investment Component and Premium Refund </th>"
+            temp += "<th> Total recognised in comprehensive income</th>"
+            temp += "<th> Premiums received </th>"
+            temp += "<th> Claims and other directly attributable expenses paid </th>"
+            temp += "<th> Insurance acquisition cash flows </th>"
+            temp += "<th>  Total cash flows </th>"
+            temp += "<th> Net balance at 31 December </th>"
+            temp += "</tr>";
+            dataObj.forEach((u) => {
+              temp += "<tr>";
+              temp += "<td>" + u[0] + "</td>";
+              temp += "<td>" + u[1] + "</td>";
+              temp += "<td>" + u[2] + "</td>";
+              temp += "<td>" + u[3] + "</td>";
+              temp += "<td>" + u[4] + "</td>";
+              temp += "<td>" + u[5] + "</td>";
+              temp += "<td>" + u[6] + "</td>";
+              temp += "<td>" + u[7] + "</td>";
+              temp += "<td>" + u[8] + "</td>";
+              temp += "<td>" + u[9] + "</td>";
+              temp += "<td>" + u[10] + "</td>";
+              temp += "<td>" + u[11] + "</td>";
+              temp += "<td>" + u[12] + "</td>";
+              temp += "<td>" + u[13] + "</td>";
+              temp += "<td>" + u[14] + "</td>";
+              temp += "<td>" + u[15] + "</td>";
+              temp += "<td>" + u[16] + "</td>";
+              temp += "<td>" + u[17] + "</td>";
+              temp += "<td>" + u[18] + "</td>";
+              temp += "<td>" + u[19] + "</td>";
+              temp += "<td>" + u[20] + "</td>";
+              temp += "<td>" + u[21] + "</td>";
+              temp += "<td>" + u[22] + "</td>";
+              temp += "<td>" + u[23] + "</td>";
+              temp += "<td>" + u[24] + "</td>";
+              temp += "</tr>";
+            })
+            //--close for loop
+            document.getElementById("data").innerHTML = temp;
+
+          }
+          alert("This is the your latest calculated AMC result")
+
+        })
+        .catch(error => console.log(error));
+    }
+    function fetchdata6() {
+      fetch('https://obqkuka75i.execute-api.ap-south-1.amazonaws.com/dev/').then(res => {
+        return res.json();
+      })
+        .then(data => {
+          console.log(typeof (data));
+          dataObj = JSON.parse(data);
+          //console.log(data);
+          console.log(typeof (dataObj));
+          //console.log(dataObj);
+          //obj = JSON.parse(dataObj);
+          //console.log(obj);
+          //console.log(typeof (obj));
+          if (dataObj.length > 0) {
+            var temp = "";
+            //--start of loop
+            temp += "<tr>";
+            temp += "<th> period </th>"
+            temp += "<th> Measure </th>"
+            temp += "<th> Product </th>"
+            temp += "<th> Sub-Product </th>"
+            temp += "<th> Net balance at 1 January</th>"
+            temp += "<th>  Changes in the statement of profit and loss and OCI </th>"
+            temp += "<th> Other contracts recognised </th>"
+            temp += "<th> Expected incurred claims and other insurance services expenses</th>"
+            temp += "<th>Amortisation of insurance acquisition cash flows </th>"
+            temp += "<th> Losses and reversals of losses on onerous contracts </th>"
+            temp += "<th> Adjustments to liabilities for incurred claims </th>"
+            temp += "<th> Insurance service result</th>"
+            temp += "<th> Net finance expenses from insurance contracts </th>"
+            temp += "<th> Effect of movement in exchange rates </th>"
+            temp += "<th>  Investment components and premium refunds </th>"
+            temp += "<th> Total changes in the statement of profit and loss and OCI </th>"
+            temp += "<th> Premiums received </th>"
+            temp += "<th>  Actual claims and other expenses paid </th>"
+            temp += "<th> Insurance acquisition cash flows </th>"
+            temp += "<th> Total cash flows</th>"
+            temp += "<th> Other items transfer in the statement of financial position </th>"
+            temp += "<th> Net balance at 31 December </th>"
+            temp += "</tr>";
+            dataObj.forEach((u) => {
+              temp += "<tr>";
+              temp += "<td>" + u[0] + "</td>";
+              temp += "<td>" + u[1] + "</td>";
+              temp += "<td>" + u[2] + "</td>";
+              temp += "<td>" + u[3] + "</td>";
+              temp += "<td>" + u[4] + "</td>";
+              temp += "<td>" + u[5] + "</td>";
+              temp += "<td>" + u[6] + "</td>";
+              temp += "<td>" + u[7] + "</td>";
+              temp += "<td>" + u[8] + "</td>";
+              temp += "<td>" + u[9] + "</td>";
+              temp += "<td>" + u[10] + "</td>";
+              temp += "<td>" + u[11] + "</td>";
+              temp += "<td>" + u[12] + "</td>";
+              temp += "<td>" + u[13] + "</td>";
+              temp += "<td>" + u[14] + "</td>";
+              temp += "<td>" + u[15] + "</td>";
+              temp += "<td>" + u[16] + "</td>";
+              temp += "<td>" + u[17] + "</td>";
+              temp += "<td>" + u[18] + "</td>";
+              temp += "<td>" + u[19] + "</td>";
+              temp += "<td>" + u[20] + "</td>";
+              temp += "<td>" + u[21] + "</td>";
+              temp += "</tr>";
+            })
+            //--close for loop
+            document.getElementById("data").innerHTML = temp;
+
+          }
+          alert("This is the your latest calculated ARC result")
+
+        })
+        .catch(error => console.log(error));
+    }
+    function fetchdata() {
+      fetch('https://bprhpp9eg6.execute-api.ap-south-1.amazonaws.com/dev_fetch').then(res => {
+        return res.json();
+      })
+        .then(data => {
+          console.log(data);
+        })
+        .catch(error => console.log(error));
+    }
+
+  </script>
+</body>
+
+</html>

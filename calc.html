@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Ifrs17 app</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+    /* table {
+      margin-top: 10%;
+      height: 650px;
+      width: 1400px;
+      overflow: auto;
+      display: block;
+      color: #f1f9f9;
+    } */
+
+    body {
+      overflow: hidden;
+    }
+
+    table {
+      height: 100%;
+      width: 100%;
+      overflow: auto;
+      display: block;
+      color: #f1f9f9;
+    }
+
+    td,
+    th {
+      background-color: #000404;
+      padding: 15px;
+      text-align: left;
+      color: aliceblue;
+      border: 1px solid rgb(90, 104, 12);
+      border-collapse: collapse;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #010000;
+      padding: 10px;
+    }
+
+    .menu ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      margin: 0 10px;
+    }
+
+    .menu a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    button {
+      font-weight: bold;
+      border-width: 3px;
+      border-style: solid;
+      border-color: black;
+      padding: 10px 20px;
+      margin-right: 10px;
+    }
+
+    .modal {
+      margin-left: 10%;
+      margin-top: 10%;
+      /* margin: 10% auto; */
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 80%;
+      /* Full width */
+      height: 70%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(4, 141, 156);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    .modal-content {
+      background-color: #0286a8;
+      margin: 0 auto;
+      /* Center horizontally */
+      padding: 20px;
+      border: 1px solid rgb(0, 152, 23);
+      max-width: 100%;
+      /* Set maximum width to 100% */
+      max-height: 100%;
+      /* Set maximum height to 100% */
+      overflow-y: auto;
+      /* Enable vertical scroll if needed */
+    }
+
+
+    /* The Close Button */
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="index.html">IFRS 17 APP</a>
+      </div>
+      <ul>
+        <ul>
+          <li>
+              <a href="index.html">HOME</a>
+          </li>
+        <li><a href="input.html"> Check Data </a></li>
+        <li><a href="Results.html">Show Generated Tables</a></li>
+      </ul>
+
+    </div>
+  </nav>
+  <!-- The Modal -->
+
+  </div>
+  <div class="img"></div>
+  <div class="center">
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <table id="data"></table>
+      </div>
+    </div>
+    <div class="img"></div>
+    <div class="center">
+      <div class="button">
+        <p><b> Reporting Configuration</p></b>
+        <br>
+        <label>Opening Date:<label>
+            <input id="start" type="date">
+            <br><br>
+            <label>Closing Date: <label>
+                <input id="end" type="date">
+                <br><br><label for="Reporting frequency">Reporting Frequency:</label>
+                <select id="frequency" name="frequency">
+                  <option value="Annually">Annually</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Monthly">Quaterly</option>
+                </select>
+                <br><br> <label for="Model">Measurment Model:</label>
+                <select id="Model" name="Model">
+                  <option value="GMM" selected>GMM</option>
+                  <option value="PAA">PAA</option>
+                  <option value="VFA">VFA</option>
+                </select>
+                </br></br>
+                <br><br>
+                </form>
+                <p><b> Select IFRS 17 Results File</p></b>
+                <div>
+                  <br>
+                  <input type="file" id="file_upload" style="margin-left: 30%;" />
+                  <br>
+                  <br><br>
+                  <button onclick="upload()" style="display: inline-block;"> Upload Data to Landing Area</button>
+                  <button id="open-modal-btn" onclick="fetchdata9()" style="display: inline-block;"> Validate</button>
+                  <button id="download-button" onclick="downloadFile()">Download Template CSV</button>
+                  <br><br>
+                  <button id="generate-button" style="display: none; " onclick="fetchecs()"> Generate Reporting
+                    Tables</button>
+                </div>
+      </div>
+    </div>
+
+    <script>
+      function downloadFile() {
+        const fileUrl = 'fin-sam.csv'; // Replace with the relative path to your file
+        const a = document.createElement('a');
+        a.href = fileUrl;
+        a.download = 'fin-sam.csv'; // Replace with your actual file name and extension
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }
+      let uploadClicked = false;
+      // Method to upload a valid csv file
+      function upload() {
+        var start = document.getElementById("start")
+        var end = document.getElementById("end")
+        // var csm = document.getElementById("csm")
+        var model = document.getElementById("Model")
+        var frequency = document.getElementById("frequency")
+        var jsonBtn = document.getElementById("jsonbtn")
+        var jsonText = document.getElementById("jsontext")
+        var data = {
+          "Start of Reporting Period": start.value,
+          "End of Reporting Period ": end.value,
+          // "CSM Mode": csm.value,
+          "Reporting Frequency": frequency.value,
+          "Measurement Model": model.value
+        }
+        var files = document.getElementById('file_upload').files;
+        if (files.length == 0) {
+          alert("Please choose any file...");
+          return;
+        }
+        var filename = files[0].name;
+        var extension = filename.substring(filename.lastIndexOf(".")).toUpperCase();
+        if (extension == '.CSV') {
+          //Here calling another method to read CSV file into json
+          csvFileToJSON(files[0], data);
+          uploadClicked = true;
+          document.getElementById("generate-button").style.display = "block";
+        } else {
+          alert("Please select a valid csv file.");
+        }
+      }
+      //Method to read csv file and convert it into JSON 
+      async function csvFileToJSON(file, par) {
+        try {
+          var reader = new FileReader();
+          reader.readAsBinaryString(file);
+          reader.onload = function (e) {
+            var jsonData = [];
+            var headers = [];
+            var rows = e.target.result.split("\n");
+            for (var i = 0; i < rows.length; i++) {
+              var cells = rows[i].split(",");
+              var rowData = {};
+              for (var j = 0; j < cells.length; j++) {
+                if (i == 0) {
+                  var headerName = cells[j].trim();
+                  headers.push(headerName);
+                } else {
+                  var key = headers[j];
+                  if (key) {
+                    rowData[key] = cells[j].trim();
+                  }
+                }
+              }
+              //skip the first row (header) data
+              if (i != 0) {
+                jsonData.push(rowData);
+              }
+            }
+            var jsonText;
+            //jsonText = Object.values(data);
+            jsonText = JSON.stringify(par);
+            // console.log(jsonText);
+            var myHeaders1 = new Headers();
+            myHeaders1.append("Content-Type", "application/json");
+            var raw1 = JSON.stringify({ jsonText });
+            var requestOptions = {
+              method: "POST",
+              headers: myHeaders1,
+              body: raw1,
+              redirect: "follow",
+            };
+            //displaying the json result in string format
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            var raw = JSON.stringify({ jsonData, jsonText });
+            var requestOptions = {
+              method: "POST",
+              headers: myHeaders,
+              body: raw,
+              redirect: "follow",
+            };
+            console.log(raw);
+            console.log(raw1);
+            fetch("https://mkwjlvv3ml.execute-api.ap-south-1.amazonaws.com/dev/", requestOptions).then(response => response.json())
+              .then(responseData => {
+                alert(responseData)
+              });
+
+          }
+        } catch (e) {
+          console.error(e);
+        }
+
+      }
+      //Method to call the ecs task trigger
+      function fetchecs() {
+        fetch('https://1kac2ix5dj.execute-api.ap-south-1.amazonaws.com/dev/')
+          .then(res => res.json())
+          .then(data => {
+            // console.log(data);
+            if (data) {
+              // alert(data);
+              const modal = document.createElement('div');
+              modal.innerHTML = 'Please Wait Reporting tables are being generated......';
+              modal.style.position = 'fixed';
+              modal.style.top = '50%';
+              modal.style.left = '50%';
+              modal.style.transform = 'translate(-50%, -50%)';
+              modal.style.padding = '40px';
+              modal.style.background = '#fff';
+              modal.style.border = '1px solid #000';
+              document.body.appendChild(modal);
+              setTimeout(function () {
+                alert("Tables have been generated");
+                modal.remove();
+              }, 40000);
+              document.getElementById("generate-button").style.display = "none";
+            } else {
+              console.log('Data is undefined');
+            }
+          })
+          .catch(error => alert(error));
+      }
+      function fetchdata9() {
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("open-modal-btn");
+        var span = document.getElementsByClassName("close")[0];
+        fetch('https://itzwdp9gmk.execute-api.ap-south-1.amazonaws.com/dev/').then(res => {
+          return res.json();
+        })
+          .then(data => {
+            dataObj = JSON.parse(data);
+            if (dataObj.length > 0) {
+              var temp = "";
+              //--start of loop
+              temp += "<th colspan='12' style='color:green; text-align:center;'>Latest Validation On Input File</th>";
+              temp += "<table>"; // Start the table element
+              temp += "<tr>";
+              temp += "<th> index </th>"
+              temp += "<th> Validation Checks </th>"
+              temp += "</tr>";
+              console.log("second stage");
+              dataObj.forEach((u) => {
+                temp += "<tr>";
+                temp += "<td>" + u.index + "</td>";
+                temp += "<td>" + u["Validation Checks"] + "</td>";
+                temp += "</tr>";
+
+              })
+              //--close for loop
+              temp += "</table>"; // Close the table element
+              document.getElementById("data").innerHTML = temp;
+              modal.style.display = "block";
+
+
+              // When the user clicks on <span> (x), close the modal
+              span.onclick = function () {
+                modal.style.display = "none";
+              }
+              // Open the modal
+
+
+            }
+          })
+          .catch(error => console.log(error));
+      }
+
+      async function sendtoRds() {
+        const assumptions = document.getElementById("myFile").value;
+        if (!assumptions) {
+          alert("please select a assumptions file.")
+          return;
+        }
+
+        const endpoint = new URL('https://y11ttcry2i.execute-api.ap-south-1.amazonaws.com/dev');
+        const response = await fetch(endpoint);
+
+        console.log(response);
+
+      }
+    </script>
+</body>
+
+</html>

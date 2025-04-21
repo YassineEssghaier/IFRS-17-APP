@@ -1,0 +1,123 @@
+<!-- <!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Ifrs17 app</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">IFRS 17 APP</a>
+      </div>
+      <ul>
+        <li><a href="calc.html">Reporting Mapping engine</a></li>
+        <li> <button type="button" id="btnget1" onclick="fetchstopstreamlit()">perform New Reporting!</button></li>
+        <li><a href="input.html"> Check input data </a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Feedback</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title">Calculate and visualize IFRS 17 results</div>
+    <div class="sub_title">(POC for gmm)</div>
+  </div>
+  <script>
+            function stopstreamlit() {
+            fetch('https://lj6jzw6hvl.execute-api.ap-south-1.amazonaws.com/dev').then(res => {
+                return res.json();
+            })
+                .then(data => {
+                    console.log(typeof (data));
+                    dataObj = JSON.parse(data);
+                    console.log(dataObj);
+                    alert(dataObj);
+                })
+                .catch(error => console.log(error));
+        }
+  </script>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <style>
+    .menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #010000;
+      padding: 10px;
+    }
+
+    .menu ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      margin: 0 10px;
+    }
+
+    .menu a {
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Ifrs17 app</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">IFRS 17 APP</a>
+      </div>
+      <ul>
+        <li><a href="calc.html">Import Data</a></li>
+        <li><a href="dashboard.html">View Reports</a></li>
+        <li>
+          <a href="#" onclick="stopstreamlit(); return false;">Reset</a>
+        </li>
+        <!-- <li><a href="#">Contact</a></li> -->
+        <li><a href="intructions.html">Instructions</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title">IFRS 17 Reporting Dashboard</div>
+  </div>
+  <script>
+    function stopstreamlit() {
+      fetch('https://lj6jzw6hvl.execute-api.ap-south-1.amazonaws.com/dev').then(res => {
+        return res.json();
+      })
+        .then(data => {
+          console.log(typeof (data));
+          dataObj = JSON.parse(data);
+          console.log(dataObj);
+          alert(dataObj);
+        })
+        .catch(error => console.log(error));
+    }
+  </script>
+</body>
+
+</html>
